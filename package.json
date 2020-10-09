@@ -23,5 +23,16 @@
     "require": [
       "./test/_require.js"
     ]
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alice-health/ky-hooks-change-case.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alice-health/ky-hooks-change-case/issues"
+  },
+  "homepage": "https://github.com/alice-health/ky-hooks-change-case#readme"
 }
