@@ -1,3 +1,7 @@
+<p>
+  <a href="https://codecov.io/github/alice-health/ky-hooks-change-case"><img src="https://img.shields.io/codecov/c/github/alice-health/ky-hooks-change-case.svg?sanitize=true" alt="Coverage Status"></a>
+</p>
+
 # ky hooks change case
 
 Allow modifications cases on requests and responses of the objects during the ky request
