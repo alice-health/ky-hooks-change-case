@@ -2,8 +2,6 @@
 
 Allow modifications cases on requests and responses of the objects during the ky request
 
-![Illustration exemple](https://raw.githubusercontent.com/alice-health/ky-hooks-change-case/main/media/illustration.png)
-
 ## Install
 
 ###### NPM
