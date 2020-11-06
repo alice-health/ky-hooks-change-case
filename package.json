@@ -1,6 +1,6 @@
 {
   "name": "@alice-health/ky-hooks-change-case",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Allow modifications cases on requests and responses of the objects during the ky request",
   "main": "dist/index.js",
   "license": "MIT",
