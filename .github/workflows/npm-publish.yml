@@ -42,7 +42,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-      - run: yarn ci
+      - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: yarn publish
         env:
