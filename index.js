@@ -1,11 +1,9 @@
-import {
-  snakeCase,
-  camelCase,
-  kebabCase,
-  isPlainObject,
-  isObject,
-  isArray,
-} from "lodash";
+import snakeCase from 'lodash/snakeCase'
+import camelCase from 'lodash/camelCase'
+import kebabCase from 'lodash/kebabCase'
+import isPlainObject from 'lodash/isPlainObject'
+import isObject from 'lodash/isObject'
+import isArray from 'lodash/isArray'
 
 const uuidValidate = function (value) {
   const regex = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;

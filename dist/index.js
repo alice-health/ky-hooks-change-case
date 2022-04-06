@@ -1,8 +1,17 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('lodash')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'lodash'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['ky-hooks-change-case'] = {}, global.lodash));
-}(this, (function (exports, lodash) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('lodash/snakeCase'), require('lodash/camelCase'), require('lodash/kebabCase'), require('lodash/isPlainObject'), require('lodash/isObject'), require('lodash/isArray')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'lodash/snakeCase', 'lodash/camelCase', 'lodash/kebabCase', 'lodash/isPlainObject', 'lodash/isObject', 'lodash/isArray'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['ky-hooks-change-case'] = {}, global.snakeCase, global.camelCase, global.kebabCase, global.isPlainObject, global.isObject, global.isArray));
+}(this, (function (exports, snakeCase, camelCase, kebabCase, isPlainObject, isObject, isArray) { 'use strict';
+
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var snakeCase__default = /*#__PURE__*/_interopDefaultLegacy(snakeCase);
+  var camelCase__default = /*#__PURE__*/_interopDefaultLegacy(camelCase);
+  var kebabCase__default = /*#__PURE__*/_interopDefaultLegacy(kebabCase);
+  var isPlainObject__default = /*#__PURE__*/_interopDefaultLegacy(isPlainObject);
+  var isObject__default = /*#__PURE__*/_interopDefaultLegacy(isObject);
+  var isArray__default = /*#__PURE__*/_interopDefaultLegacy(isArray);
 
   const uuidValidate = function (value) {
     const regex = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
@@ -10,17 +19,17 @@
   };
 
   const mapKeysDeep = function (obj, fn) {
-    if (lodash.isArray(obj)) {
+    if (isArray__default['default'](obj)) {
       return obj.map((item) => {
         return mapKeysDeep(item, fn);
       });
     }
 
-    if (lodash.isPlainObject(obj)) {
+    if (isPlainObject__default['default'](obj)) {
       return Object.keys(obj).reduce((accumulator, key) => {
         const value = obj[key];
         const newKey = uuidValidate(key) ? key : fn(key);
-        accumulator[newKey] = lodash.isObject(value) ? mapKeysDeep(value, fn) : value;
+        accumulator[newKey] = isObject__default['default'](value) ? mapKeysDeep(value, fn) : value;
         return accumulator;
       }, {});
     }
@@ -50,13 +59,13 @@
     };
   }
 
-  const requestToSnakeCase = createRequestModify(lodash.snakeCase);
-  const requestToCamelCase = createRequestModify(lodash.camelCase);
-  const requestToKebabCase = createRequestModify(lodash.kebabCase);
+  const requestToSnakeCase = createRequestModify(snakeCase__default['default']);
+  const requestToCamelCase = createRequestModify(camelCase__default['default']);
+  const requestToKebabCase = createRequestModify(kebabCase__default['default']);
 
-  const responseToSnakeCase = createResponseModify(lodash.snakeCase);
-  const responseToCamelCase = createResponseModify(lodash.camelCase);
-  const responseToKebabCase = createResponseModify(lodash.kebabCase);
+  const responseToSnakeCase = createResponseModify(snakeCase__default['default']);
+  const responseToCamelCase = createResponseModify(camelCase__default['default']);
+  const responseToKebabCase = createResponseModify(kebabCase__default['default']);
 
   exports.requestToCamelCase = requestToCamelCase;
   exports.requestToKebabCase = requestToKebabCase;
